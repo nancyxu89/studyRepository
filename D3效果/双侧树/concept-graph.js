@@ -1,7 +1,8 @@
 var CollapsibleTree = function (elt) {
 
     var m = [20, 120, 20, 120],
-        w = 1280 - m[1] - m[3],
+        w = document.getElementById('categoryHierarchy').offsetWidth,
+    // w = 1280 - m[1] - m[3],
         h = 580 - m[0] - m[2],
         i = 0,
         root,
@@ -28,13 +29,27 @@ var CollapsibleTree = function (elt) {
         });
 
     var vis = d3.select(elt).append("svg:svg")
-        .attr("width", w + m[1] + m[3])
-        .attr("height", h + m[0] + m[2])
-        .append("svg:g")
-        // .attr("transform", "translate(" + m[3] + "," + m[0] + ")"); // left-right
-        // .attr("transform", "translate(" + m[0] + "," + m[3] + ")"); // top-bottom
-        .attr("transform", "translate(" + w / 4 + ',' + 0 / 2 + ")"); // bidirectional-tree
+        .attr("width", w)
+        .attr("height", h)
+    // .attr("width", w + m[1] + m[3])
+    // .attr("height", h + m[0] + m[2])
+    gContainer = vis.append("svg:g")
+
+    // .attr("transform", "translate(" + m[3] + "," + m[0] + ")"); // left-right
+    // .attr("transform", "translate(" + m[0] + "," + m[3] + ")"); // top-bottom
+    // .attr("transform", "translate(" + w / 4 + ',' + 0 / 2 + ")"); // bidirectional-tree
     // .attr("transform", "translate(0," + h / 2 + ")"); // bidirectional-tree
+
+    var zoom = d3.behavior.zoom()
+        .scaleExtent([0.8, 10])
+        .on("zoom", zoomed);
+    vis.call(zoom);
+    function zoomed() {
+        gContainer.transition()
+            .duration(300)
+            .attr("transform", "translate(" + d3.event.translate[0] + ',' + d3.event.translate[1] + ")scale(" + d3.event.scale + ")");
+        // .attr("transform", "translate(" + d3.event.transform.x + ',' + d3.event.transform.y + ")scale(" + d3.event.transform.k + ")");
+    }
 
 
     var that = {
@@ -69,12 +84,11 @@ var CollapsibleTree = function (elt) {
 
             // Normalize for fixed-depth.
             nodes.forEach(function (d) {
-                // d.x = d.depth * 120;
-                d.y = d.depth * 240;
+                d.y = d.depth * 180;
             });
 
             // Update the nodes…
-            var node = vis.selectAll("g.node")
+            var node = gContainer.selectAll("g.node")
                 .data(nodes, function (d) {
                     return d.id || (d.id = ++i);
                 });
@@ -87,8 +101,10 @@ var CollapsibleTree = function (elt) {
                     // return "translate(" + source.x0 + "," + source.y0 + ")";
                 })
                 .on("click", function (d) {
-                    that.toggle(d);
-                    that.updateBoth(d);
+                    if (d.depth > 0) {
+                        that.toggle(d);
+                        that.updateBoth(d);
+                    }
                 });
 
             nodeEnter.append("svg:circle")
@@ -167,7 +183,7 @@ var CollapsibleTree = function (elt) {
                 .style("fill-opacity", 1e-6);
 
             // Update the links…
-            var link = vis.selectAll("path.link")
+            var link = gContainer.selectAll("path.link")
                 .data(tree.links_parents(nodes).concat(tree.links(nodes)), function (d) {
                     return d.target.id;
                 });
@@ -250,16 +266,11 @@ var CollapsibleTree = function (elt) {
                         }
                     }
 
-                    console.info(source, source.name)
-                    console.info("M" + source.y + "," + source.x
-                        + "C" + (source.y + target.y) / 2 + "," + source.x
-                        + " " + (source.y + target.y) / 2 + "," + target.x
-                        + " " + target.y + "," + target.x)
-
                     return "M" + source.y + "," + source.x
                         + "C" + (source.y + target.y) / 2 + "," + source.x
                         + " " + (source.y + target.y) / 2 + "," + target.x
                         + " " + target.y + "," + target.x;
+
                 })
 
             // Transition exiting nodes to the parent's new position.
@@ -294,7 +305,7 @@ var CollapsibleTree = function (elt) {
             });
 
             // Update the nodes…
-            var node = vis.selectAll("g.node")
+            var node = gContainer.selectAll("g.node")
                 .data(nodes, function (d) {
                     return d.id || (d.id = ++i);
                 });
@@ -362,7 +373,7 @@ var CollapsibleTree = function (elt) {
                 .style("fill-opacity", 1e-6);
 
             // Update the links…
-            var link = vis.selectAll("path.link")
+            var link = gContainer.selectAll("path.link")
                 .data(tree.links(nodes), function (d) {
                     return d.target.id;
                 });
@@ -410,7 +421,7 @@ var CollapsibleTree = function (elt) {
             });
 
             // Update the nodes…
-            var node = vis.selectAll("g.node")
+            var node = gContainer.selectAll("g.node")
                 .data(nodes, function (d) {
                     return d.id || (d.id = ++i);
                 });
@@ -479,7 +490,7 @@ var CollapsibleTree = function (elt) {
                 .style("fill-opacity", 1e-6);
 
             // Update the links…
-            var link = vis.selectAll("path.link")
+            var link = gContainer.selectAll("path.link")
                 .data(tree.links(nodes), function (d) {
                     return d.target.id;
                 });

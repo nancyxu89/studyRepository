@@ -17,24 +17,6 @@
           "name": "pTransport_operators",
           "isparent": true
         }
-      ],
-      "children": [
-        {
-          "name": "cAirline_alliances",
-          "isparent": false
-        },
-        {
-          "name": "cAirlines_by_continent",
-          "isparent": false
-        },
-        {
-          "name": "cAirlines_by_type",
-          "isparent": false
-        },
-        {
-          "name": "cDefunct_airlines",
-          "isparent": false
-        }
       ]
     },
     {
@@ -52,24 +34,6 @@
         {
           "name": "Transparent_companies_pTransport_operators",
           "isparent": true
-        }
-      ],
-      "children": [
-        {
-          "name": "Transparent_companies_cAirline_alliances",
-          "isparent": false
-        },
-        {
-          "name": "Transparent_companies_cAirlines_by_continent",
-          "isparent": false
-        },
-        {
-          "name": "Transparent_companies_cAirlines_by_type",
-          "isparent": false
-        },
-        {
-          "name": "Transparent_companies_cDefunct_airlines",
-          "isparent": false
         }
       ]
     },
@@ -93,7 +57,25 @@
     },
     {
       "name": "Defunct_airlines",
-      "isparent": false
+      "isparent": false,
+      "children": [
+        {
+          "name": "Defunct_airlines_alliances",
+          "isparent": false
+        },
+        {
+          "name": "Defunct_airlines_continent",
+          "isparent": false
+        },
+        {
+          "name": "Defunct_airlines_type",
+          "isparent": false
+        },
+        {
+          "name": "Defunct_airlines_airlines",
+          "isparent": false
+        }
+      ]
     }
   ]
 }
