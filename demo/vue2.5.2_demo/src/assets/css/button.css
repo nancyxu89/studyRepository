@@ -1,0 +1,85 @@
+.input-groups {
+    display:flex;
+}
+
+.form-control {
+    width: 281px;
+    height: 32px;
+    padding-left: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px 0 0 6px;
+    border-right: none;
+}
+
+.search-btn {
+    color: #fff;
+    background: #ff6c00 ;
+    width: 105px;
+    height: 34px;
+    line-height: 34px;
+    font-size: 14px;
+    /*display: inline-flex;*/
+    cursor: pointer;
+    border-radius: 0px 6px 6px 0px;
+    /*background-image: url('../images/search.png');*/
+    /*background-repeat: no-repeat;*/
+    /*background-position: 25% 50%;*/
+    /*padding-left: 40px;*/
+    overflow: hidden;
+    text-align: center;
+}
+.set-btn {
+  background: linear-gradient(0deg, #41a7ff, #3b96e4);
+  color: #fff;
+  width: 135px;
+  line-height: 36px;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.search-btn img {
+    width: 16px;
+    height: 16px;
+    margin: 8px 2px 0 25px;
+}
+
+.pub-btn {
+    width: 54px;
+    height: 26px;
+    background: #3594e7;
+    color: #fff;
+    border-radius: 3px;
+}
+
+.save-btn {
+    width: 136px;
+    height: 36px;
+    background: #4187dc;
+    color: #fff;
+    border-radius: 3px;
+    font-size: 13px;
+}
+
+.cancle-btn {
+    width: 136px;
+    height: 36px;
+    /*background: #ff8201;*/
+    background-color: #f5f8ff;
+    border: 1px solid #448bef;
+    color: #448bef;
+    border-radius: 3px;
+    font-size: 13px;
+}
+
+.add-btn {
+    width: 106px;
+    height: 31px;
+    color: #fff;
+    background: #3594e7;
+    border-radius: 3px;
+}
+
+button[disabled]{
+  opacity: 0.3;
+  cursor: not-allowed;
+}

@@ -1,0 +1,302 @@
+.homepage-search {
+  width: 96%;
+  height: 73px;
+  border: 1px solid #ccc;
+  background-color: #f2f2f2;
+  margin: 20px 2%;
+}
+
+.homepage-search-main {
+  margin: 18px auto;
+  width: 450px;
+}
+
+.homepage-search-main .form-control {
+  width: 100%;
+}
+
+.homepage-content {
+  width: 96%;
+  height: 594px;
+  margin: 20px 2%;
+}
+
+.homepage-content .content-left {
+  width: 42%;
+}
+
+.homepage-content .content-right {
+  width: 57%;
+  margin-left: 1%;
+}
+
+.content-sentiment,
+.content-newest-sentiment,
+.content-news-change {
+  height: 360px;
+  border: 1px solid #ccc;
+  border-top: 2px solid #1593ed;
+}
+
+.content-news-change {
+  height: 211px;
+  margin-top: 18px;
+}
+
+.content-newest-sentiment {
+  height: 214px;
+}
+
+.content-type-item {
+  height: 357px;
+  margin-top: 18px;
+}
+
+.content-sentiment-title {
+  height: 38px;
+  line-height: 38px;
+  padding: 0 18px;
+  border-bottom: 1px solid #d5d5d5;
+  display:-ms-flexbox;
+  display:flex;
+  position: relative;
+}
+
+.content-sentiment-title h1 {
+  font-size: 16px;
+  font-weight: bold;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.content-sentiment-title span {
+  position: absolute;
+  right: 16px;
+  color: #4c93e0;
+  cursor: pointer;
+}
+
+.content-sentiment-main {
+  height: 62px;
+  font-size: 14px;
+  cursor: pointer;
+  margin: 2px 10px;
+  /**根据Safari修改**/
+}
+
+.content-sentiment-name {
+  width: 80%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  padding: 11px 14px 5px 14px;
+  /**根据Safari修改**/
+}
+
+.content-sentiment-energy,
+.content-sentiment-time {
+  padding: 0px 14px 0 14px;
+  font-size: 12px;
+  color: #d0d0d0;
+}
+
+.content-sentiment-main:hover {
+  border: 1px solid #ccc;
+  border-left: 3px solid #1593ed;
+  background-color: #f6f6f6;
+  color: #1b7fdb;
+}
+
+.content-message-change {
+  padding: 10px 0 0 4%;
+}
+
+.content-message-change button {
+  width: 30.5%;
+  height: 30px;
+  border: 1px solid #c0ddf7;
+  background-color: #eef2f7;
+  border-radius: 3px;
+  margin: 11px 2% 0px 0px;
+  cursor: pointer;
+}
+
+.content-message-change button:hover {
+  background-color: #5ea5fd;
+  color: #fff;
+  border: 1px solid #328cfd;
+}
+
+.content-sentiment-minute {
+  margin: 0px 18px;
+  font-size: 14px;
+  height: 33px;
+  line-height: 33px;
+  cursor: pointer;
+  position: relative;
+}
+
+.content-sentiment-minute:hover {
+  color: #1593ed;
+}
+
+.content-sentiment-time {
+  padding: 0px;
+  position: absolute;
+  top: 0;
+  right: -10px;
+}
+
+.content-sentiment-character {
+  /*width: 65%;*/
+  padding-right: 180px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.content-sentiment-time .source {
+  /*width: 65%;*/
+  width: 48px;
+  display: inline-block;
+  margin-right: 5px;
+  float: right;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  text-align: right
+}
+
+.content-sentiment-time .time {
+  /*width: 65%;*/
+  display: inline-block;
+  width: 110px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  float: right;
+}
+
+.item-top {
+  display:-ms-flexbox;display:flex;
+  justify-content: space-between;
+}
+
+.item-top .content-item-main {
+  float: left;
+}
+
+.content-item-main {
+  width: 31.3333%;
+  height: 167px;
+  border: 1px solid #d5d5d5;
+  margin: 2px 0 18px;
+}
+
+.item-number {
+  margin-left: 8px;
+  cursor: pointer;
+}
+
+.content-sentiment-title i {
+  margin: 0px 5px 0 0;
+  font-size: 20px;
+  color: #ff7c29;
+}
+
+.content-item-main span {
+  font-size: 16px;
+}
+
+.content-item-main ul li:nth-child(1) {
+  margin-top: 2.5px;
+}
+
+.content-item-main ul li {
+  cursor: pointer;
+  padding: 6px 15px;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.content-item-main ul li:hover {
+  background: #f6f6f6;
+  border-top: 1px solid #e8e8e8;
+  border-bottom: 1px solid #e8e8e8;
+  color: #388fe1;
+}
+
+
+/*跑马灯*/
+
+@-webkit-keyframes marquee {
+  0% {
+    top: 50%;
+  }
+  100% {
+    top: -100%;
+  }
+}
+
+@-moz-keyframes marquee {
+  0% {
+    top: 50%;
+  }
+  100% {
+    top: -100%;
+  }
+}
+
+@-ms-keyframes marquee {
+  0% {
+    top: 50%;
+  }
+  100% {
+    top: -100%;
+  }
+}
+
+@-o-keyframes marquee {
+  0% {
+    top: 50%;
+  }
+  100% {
+    top: -100%;
+  }
+}
+
+@keyframes marquee {
+  0% {
+    top: 50%;
+  }
+  100% {
+    top: -100%
+  }
+}
+
+.marquee {
+  height: auto;
+  overflow: hidden;
+  position: relative;
+}
+
+.marquee:hover div {
+  animation-play-state: paused;
+}
+
+.marquee div {
+  width: 76%;
+  display: block;
+  position: absolute;
+  overflow: hidden;
+  -webkit-animation: marquee 10s linear infinite;
+  -moz-animation: marquee 10s linear infinite;
+  -ms-animation: marquee 10s linear infinite;
+  -o-animation: marquee 10s linear infinite;
+  animation: marquee 10s linear infinite;
+  animation-play-state: running;
+}

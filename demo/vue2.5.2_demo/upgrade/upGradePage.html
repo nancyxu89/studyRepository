@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+  <title>当前浏览器版本过低，请升级！</title>
+  <link rel="stylesheet" href="../static/style/main.css">
+  <link rel="stylesheet" href="../static/style/layout.css">
+  <style>
+    .upgrade {
+      width: 100%;
+      height: 100%;
+    }
+
+    .upgrade-mark {
+      height: 52.5%;
+      box-sizing: border-box;
+      text-align: center;
+      background: #e4f3ff;
+    }
+
+    .upgrade-mark .floater {
+      float: left;
+      height: 50%;
+      width: 100%;
+      margin-bottom: -6%;
+    }
+
+    .upgrade-mark .pic {
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 20px;
+    }
+
+    .upgrade-mark .des {
+      display: inline-block;
+      vertical-align: middle;
+      padding-left: 36px;
+      border-left: 2px solid #c4d9eb;
+      text-align: left;
+    }
+
+    .upgrade-mark .des h4 {
+      color: #56779b;
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    .upgrade-mark .des p {
+      line-height: 24px;
+      color: #87a2bc;
+    }
+
+    .upgrade-list {
+      height: 39%;
+      box-sizing: border-box;
+      background: #3088e9;
+    }
+
+    .upgrade-list .floater {
+      float: left;
+      height: 50%;
+      width: 100%;
+      margin-bottom: -6%;
+    }
+
+    .upgrade-list ul {
+      text-align: center;
+    }
+
+    .upgrade-list li {
+      display: inline-block;
+      width: 180px;
+      height: 120px;
+      transition: all 1s;
+    }
+
+    .upgrade-list li:hover {
+      transform: scale(1.2, 1.4);
+    }
+
+    .upgrade-list li .browser-pic {
+      background-image: url('../static/img/browser.png');
+      background-repeat: no-repeat;
+      height: 100px;
+      position: relative;
+    }
+
+    .upgrade-list li .browser-pic::after {
+      content: '';
+      width: 100%;
+      position: absolute;
+      height: 15px;
+      bottom: 0;
+      left: 0;
+      background: rgba(48, 136, 233, .8)
+    }
+
+    .upgrade-list li p {
+      line-height: 20px;
+      color: #fff;
+    }
+
+    .upgrade-list li.ie .browser-pic {
+      background-position: 0 10px;
+    }
+
+    .upgrade-list li.edge .browser-pic {
+      background-position: -175px 10px;
+    }
+
+    .upgrade-list li.safari .browser-pic {
+      background-position: -350px 10px;
+    }
+
+    .upgrade-list li.chrome .browser-pic {
+      background-position: -530px 10px;
+    }
+
+    .upgrade-list li.firefox .browser-pic {
+      background-position: -710px 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page-content upgrade">
+    <div class="page-top">
+      <img class="fl" src="../static/img/home-logo.png">
+      <!--<div class="fl page-border"></div>-->
+      <!--<span class="page-top-title fl">招商通</span>-->
+    </div>
+    <div class="upgrade-mark">
+      <div class="floater"></div>
+      <div style="clear:both;">
+        <img src="../static/img/upgrade.png" alt="" class="pic">
+        <div class="des">
+          <h4>很抱歉！</h4>
+          <p>您正在使用的浏览器版本过低，无法正常访问！</p>
+          <p>请升级或选择另一个浏览器再试！</p>
+        </div>
+      </div>
+    </div>
+    <div class="upgrade-list">
+      <div class="floater"></div>
+      <ul>
+        <li class="ie">
+          <a href="http://windows.microsoft.com/ie" target="_black">
+            <div class="browser-pic"></div>
+            <p>Internet Explorer 10及以上</p>
+          </a>
+        </li>
+        <li class="edge">
+          <a href="https://www.microsoft.com/en-us/windows/microsoft-edge" target="_black">
+            <div class="browser-pic"></div>
+            <p>Microsoft Edge</p>
+          </a>
+        </li>
+        <li class="safari">
+          <a href="https://www.apple.com/safari/" target="_black">
+            <div class="browser-pic"></div>
+            <p>Apple Safari</p>
+          </a>
+        </li>
+        <li class="chrome">
+          <a href="https://www.google.com/chrome" target="_black">
+            <div class="browser-pic"></div>
+            <p>Google Chrome</p>
+          </a>
+        </li>
+        <li class="firefox">
+          <a href="https://www.firefox.com/" target="_black">
+            <div class="browser-pic"></div>
+            <p>FireFox</p>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</body>
+
+</html>
+
+<script>
+  // export default {
+//   data: function () {
+//     return {
+
+//       browsers: [
+//         { name: 'ie', title: 'Internet Explorer 10及以上', src: 'http://windows.microsoft.com/ie' },
+//         { name: 'edge', title: 'Microsoft Edge', src: 'https://www.microsoft.com/en-us/windows/microsoft-edge' },
+//         { name: 'safari', title: 'Apple Safari', src: 'https://www.apple.com/safari/' },
+//         { name: 'chrome', title: 'Google Chrome', src: 'https://www.google.com/chrome' },
+//         { name: 'firefox', title: 'FireFox', src: 'https://www.firefox.com/' },
+//       ]
+//     }
+//   }
+// }
+
+</script>
