@@ -1,0 +1,26 @@
+{
+  "name": "my-app",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "custom-react-scripts": "0.2.2",
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0"
+  },
+  "scripts": {
+    "start": "cross-env PORT=18090 react-scripts start",
+    "build": "react-scripts build",
+    "build2": "cross-env PUBLIC_URL='.' react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "axios": "^0.18.0",
+    "cross-env": "^5.1.6",
+    "jquery": "^3.3.1",
+    "mobx": "^5.0.0",
+    "mobx-react": "^5.2.0",
+    "react-router-dom": "^4.3.1"
+  },
+  "homepage": "."
+}
