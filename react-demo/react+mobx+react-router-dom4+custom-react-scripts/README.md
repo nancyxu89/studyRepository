@@ -1,3 +1,6 @@
+通过creat-react-app my-app --scripts-version custom-react-scripts创建，
+使用react-router-dom,v4版，结合mobx状态管理器
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
